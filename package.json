@@ -1,0 +1,22 @@
+{
+  "name": "neko-scene-changer-bot",
+  "version": "1.1.0",
+  "description": "Connects to a Twitch chat and listens to command to switch scene from broadcaster and/or moderators.",
+  "main": "bot.js",
+  "scripts": {
+    "test": "node test.js",
+    "start": "node bot.js"
+  },
+  "author": "Arty",
+  "license": "MIT",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/arty4999/nekobot.git"
+  },
+  "dependencies": {
+    "dotenv": "^6.1.0",
+    "twitch-js": "^1.2.15",
+    "obs-websocket-js": "^4.0.2"
+  }
+}
