@@ -28,7 +28,7 @@ obs
   })
   .then(() => {
     console.log(`[OBS] (log): Connected to OBS.`);
-    return obs.getSceneList();
+    return obs.send('GetSceneList');
   })
   .then((data) => {
     // Save scene names in lowercase and original name
@@ -37,6 +37,7 @@ obs
   })
   .catch((e) => {
     console.log(`[OBS] (error): Could not connect to OBS.`);
+    console.log(e);
     process.exit();
   });
 
@@ -68,9 +69,9 @@ client.on("chat", (channel, userstate, message, self) => {
           if (obsScenes.indexOf(message) >= 0) {
             // scene with name exists, switch to it.
             const sceneName = obsScenesOriginalName[obsScenes.indexOf(message)];
-            obs.setCurrentScene({
-              "scene-name": sceneName,
-            });
+            obs.send('SetCurrentScene', {
+              'scene-name': sceneName
+          });
             console.log(
               `[OBS] (log): Switching to scene: ${sceneName}, command sent from ${userstate.username}.`
             );

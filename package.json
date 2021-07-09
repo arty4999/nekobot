@@ -15,8 +15,8 @@
     "url": "https://github.com/arty4999/nekobot.git"
   },
   "dependencies": {
-    "dotenv": "^6.1.0",
+    "dotenv": ">=6.1.0",
     "twitch-js": "^1.2.15",
-    "obs-websocket-js": "^4.0.2"
+    "obs-websocket-js": ">=4.0.2"
   }
 }
